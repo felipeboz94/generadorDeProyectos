@@ -1,0 +1,82 @@
+{
+    "Excel":
+    {
+        "tipo00":{
+            "nombre" : "Pruebas",
+            "acronimo" : "PRB"
+        },
+        "tipo01":{
+            "nombre" : "Listado de documentos",
+            "acronimo" : "LD"
+        },
+        "tipo02":{
+            "nombre" : "Listado de materiales",
+            "acronimo" : "LM"
+        },
+        "tipo03":{
+            "nombre" : "Listado de instrumentos",
+            "acronimo" : "LI"
+        },
+        "tipo04":{
+            "nombre" : "Partes diarios",
+            "acronimo" : "PD"
+        },
+        "tipo05":{
+            "nombre" : "Memoria de cálculo",
+            "acronimo" : "MC"
+        }
+    },
+
+    "CAD":{
+        "tipo00":{
+            "nombre" : "Esquemas topográficos",
+            "acronimo" : "ET"
+        },
+        "tipo01":{
+            "nombre" : "Esquemas unifilares",
+            "acronimo" : "EU"
+        },
+        "tipo02":{
+            "nombre" : "Funcionales",
+            "acronimo" : "FUN"
+        },
+        "tipo03":{
+            "nombre" : "Layout",
+            "acronimo" : "LAY"
+        },
+        "tipo04":{
+            "nombre" : "P&ID",
+            "acronimo" : "PID"
+        },
+        "tipo05":{
+            "nombre" : "Canalizaciones",
+            "acronimo" : "CA"
+        },
+        "tipo06":{
+            "nombre" : "Esquemas eléctricos",
+            "acronimo" : "EE"
+        },
+        "tipo07":{
+            "nombre" : "Típicos de montaje",
+            "acronimo" : "TM"
+        }
+    },
+
+    "WORD":{
+        "tipo00":{
+            "nombre" : "Informes",
+            "acronimo" : "INF"
+        },
+        "tipo01":{
+            "nombre" : "Pliego de especificaciones técnicas",
+            "acronimo" : "PET"
+        },
+        "tipo02":{
+            "nombre" : "Instructivo",
+            "acronimo" : "INS"
+        }
+    }
+
+
+}
+

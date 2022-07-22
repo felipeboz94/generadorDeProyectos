@@ -1,0 +1,122 @@
+2022-07-21 23:52:07,565 - INFO - armadoCarpetas.creacionCarpetas - Está por crear un proyecto
+2022-07-21 23:52:07,700 - DEBUG - PIL.PngImagePlugin - STREAM b'IHDR' 16 13
+2022-07-21 23:52:07,701 - DEBUG - PIL.PngImagePlugin - STREAM b'pHYs' 41 9
+2022-07-21 23:52:07,701 - DEBUG - PIL.PngImagePlugin - STREAM b'tEXt' 62 25
+2022-07-21 23:52:07,701 - DEBUG - PIL.PngImagePlugin - STREAM b'IDAT' 99 8192
+2022-07-21 23:52:07,719 - DEBUG - PIL.PngImagePlugin - STREAM b'IHDR' 16 13
+2022-07-21 23:52:07,719 - DEBUG - PIL.PngImagePlugin - STREAM b'sRGB' 41 1
+2022-07-21 23:52:07,719 - DEBUG - PIL.PngImagePlugin - STREAM b'gAMA' 54 4
+2022-07-21 23:52:07,719 - DEBUG - PIL.PngImagePlugin - STREAM b'pHYs' 70 9
+2022-07-21 23:52:07,719 - DEBUG - PIL.PngImagePlugin - STREAM b'IDAT' 91 10675
+2022-07-21 23:52:07,721 - INFO - excel.lecturaExcel - El listado de documentos contiene: 
+DOCUMENTO: 1 --> TITULO: Listado de documentos, Nro DOC: LDC-PR-22-02-0201-LD-001, FORMATO: EXCEL 
+DOCUMENTO: 2 --> TITULO: Memoria de relevamiento de cargas, Nro DOC: LDC-PR-22-02-0202-MC-001, FORMATO: EXCEL 
+DOCUMENTO: 3 --> TITULO: Memoria de dimensionamiento de paneles y disposición, Nro DOC: LDC-PR-22-02-0202-MC-002, FORMATO: EXCEL 
+DOCUMENTO: 4 --> TITULO: Memoria de dimensionamiento de inversores: distintos casos, incluir baterías, Nro DOC: LDC-PR-22-02-0202-MC-003, FORMATO: EXCEL 
+DOCUMENTO: 5 --> TITULO: Memoria de cálculo de conductores, Nro DOC: LDC-PR-22-02-0202-MC-004, FORMATO: EXCEL 
+DOCUMENTO: 6 --> TITULO: Memoria de cálculo de protecciones, Nro DOC: LDC-PR-22-02-0202-MC-005, FORMATO: EXCEL 
+DOCUMENTO: 7 --> TITULO: Típico de montaje de paneles, Nro DOC: LDC-PR-22-02-0203-TM-001, FORMATO: CAD 
+DOCUMENTO: 8 --> TITULO: Esquema unifilar general, Nro DOC: LDC-PR-22-02-0204-EE-001, FORMATO: CAD 
+DOCUMENTO: 9 --> TITULO: Topográfico y unifilar de tablero de Administración, Nro DOC: LDC-PR-22-02-0204-EE-002, FORMATO: CAD 
+DOCUMENTO: 10 --> TITULO: Topográfico y unifilar de tablero de Enfermería, Nro DOC: LDC-PR-22-02-0204-EE-003, FORMATO: CAD 
+DOCUMENTO: 11 --> TITULO: Topográficos y unifilar de tablero de campo , Nro DOC: LDC-PR-22-02-0204-EE-004, FORMATO: CAD 
+DOCUMENTO: 12 --> TITULO: Topográfico y unifilar de tablero nuevo (si hace falta), Nro DOC: LDC-PR-22-02-0204-EE-005, FORMATO: CAD 
+DOCUMENTO: 13 --> TITULO: Listado de conductores, Nro DOC: LDC-PR-22-02-0205-LC-001, FORMATO: EXCEL 
+DOCUMENTO: 14 --> TITULO: Listado de materiales y equipos, Nro DOC: LDC-PR-22-02-0206-LM-001, FORMATO: EXCEL 
+DOCUMENTO: 15 --> TITULO: Layout de canalizaciones, Nro DOC: LDC-PR-22-02-0207-CA-001, FORMATO: CAD 
+DOCUMENTO: 16 --> TITULO: Típico de canalizaciones y  cámaras subterráneas desde paneles a tablero , Nro DOC: LDC-PR-22-02-0207-CA-002, FORMATO: CAD 
+DOCUMENTO: 17 --> TITULO: Informe de procedimientos a realizar frente a EPE-CAMMESA, Nro DOC: LDC-PR-22-02-0208-INF-001, FORMATO: WORD 
+DOCUMENTO: 18 --> TITULO: Informe de factibilidad ambiental, Nro DOC: LDC-PR-22-02-0208-INF-002, FORMATO: WORD 
+DOCUMENTO: 19 --> TITULO: Análisis de factibilidad técnica-económica, Nro DOC: LDC-PR-22-02-0208-INF-003, FORMATO: WORD 
+DOCUMENTO: 20 --> TITULO: Pliego de especificaciones técnicas (tener en cuenta la obra civil para hacer el cable subterráneo y las cámaras), Nro DOC: LDC-PR-22-02-0209-PET-001, FORMATO: WORD 
+
+2022-07-21 23:52:07,726 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\00 - Parte diario\
+2022-07-21 23:52:07,729 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\01 - Documentación recibida\00 - Propuesta técnica\
+2022-07-21 23:52:07,731 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\01 - Documentación recibida\01 - Planos\
+2022-07-21 23:52:07,731 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\01 - Documentación recibida\02 - Fotos\
+2022-07-21 23:52:07,733 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\01 - Documentación recibida\03 - Manuales\
+2022-07-21 23:52:07,734 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\02 - Documentación generada\00 - Carpeta01\
+2022-07-21 23:52:07,734 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\02 - Documentación generada\00 - Carpeta01\
+2022-07-21 23:52:07,739 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:52:07,740 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\03 - asd3\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:55:38,551 - INFO - main.main - ¡INICIO DE LA APLICACIÓN!
+2022-07-21 23:56:00,529 - INFO - armadoCarpetas.creacionCarpetas - Está por crear un proyecto
+2022-07-21 23:56:01,274 - DEBUG - PIL.PngImagePlugin - STREAM b'IHDR' 16 13
+2022-07-21 23:56:01,274 - DEBUG - PIL.PngImagePlugin - STREAM b'pHYs' 41 9
+2022-07-21 23:56:01,274 - DEBUG - PIL.PngImagePlugin - STREAM b'tEXt' 62 25
+2022-07-21 23:56:01,275 - DEBUG - PIL.PngImagePlugin - STREAM b'IDAT' 99 8192
+2022-07-21 23:56:01,289 - DEBUG - PIL.PngImagePlugin - STREAM b'IHDR' 16 13
+2022-07-21 23:56:01,290 - DEBUG - PIL.PngImagePlugin - STREAM b'sRGB' 41 1
+2022-07-21 23:56:01,290 - DEBUG - PIL.PngImagePlugin - STREAM b'gAMA' 54 4
+2022-07-21 23:56:01,290 - DEBUG - PIL.PngImagePlugin - STREAM b'pHYs' 70 9
+2022-07-21 23:56:01,290 - DEBUG - PIL.PngImagePlugin - STREAM b'IDAT' 91 10675
+2022-07-21 23:56:01,291 - INFO - excel.lecturaExcel - El listado de documentos contiene: 
+DOCUMENTO: 1 --> TITULO: Listado de documentos, Nro DOC: LDC-PR-22-02-0201-LD-001, FORMATO: EXCEL 
+DOCUMENTO: 2 --> TITULO: Memoria de relevamiento de cargas, Nro DOC: LDC-PR-22-02-0202-MC-001, FORMATO: EXCEL 
+DOCUMENTO: 3 --> TITULO: Memoria de dimensionamiento de paneles y disposición, Nro DOC: LDC-PR-22-02-0202-MC-002, FORMATO: EXCEL 
+DOCUMENTO: 4 --> TITULO: Memoria de dimensionamiento de inversores: distintos casos, incluir baterías, Nro DOC: LDC-PR-22-02-0202-MC-003, FORMATO: EXCEL 
+DOCUMENTO: 5 --> TITULO: Memoria de cálculo de conductores, Nro DOC: LDC-PR-22-02-0202-MC-004, FORMATO: EXCEL 
+DOCUMENTO: 6 --> TITULO: Memoria de cálculo de protecciones, Nro DOC: LDC-PR-22-02-0202-MC-005, FORMATO: EXCEL 
+DOCUMENTO: 7 --> TITULO: Típico de montaje de paneles, Nro DOC: LDC-PR-22-02-0203-TM-001, FORMATO: CAD 
+DOCUMENTO: 8 --> TITULO: Esquema unifilar general, Nro DOC: LDC-PR-22-02-0204-EE-001, FORMATO: CAD 
+DOCUMENTO: 9 --> TITULO: Topográfico y unifilar de tablero de Administración, Nro DOC: LDC-PR-22-02-0204-EE-002, FORMATO: CAD 
+DOCUMENTO: 10 --> TITULO: Topográfico y unifilar de tablero de Enfermería, Nro DOC: LDC-PR-22-02-0204-EE-003, FORMATO: CAD 
+DOCUMENTO: 11 --> TITULO: Topográficos y unifilar de tablero de campo , Nro DOC: LDC-PR-22-02-0204-EE-004, FORMATO: CAD 
+DOCUMENTO: 12 --> TITULO: Topográfico y unifilar de tablero nuevo (si hace falta), Nro DOC: LDC-PR-22-02-0204-EE-005, FORMATO: CAD 
+DOCUMENTO: 13 --> TITULO: Listado de conductores, Nro DOC: LDC-PR-22-02-0205-LC-001, FORMATO: EXCEL 
+DOCUMENTO: 14 --> TITULO: Listado de materiales y equipos, Nro DOC: LDC-PR-22-02-0206-LM-001, FORMATO: EXCEL 
+DOCUMENTO: 15 --> TITULO: Layout de canalizaciones, Nro DOC: LDC-PR-22-02-0207-CA-001, FORMATO: CAD 
+DOCUMENTO: 16 --> TITULO: Típico de canalizaciones y  cámaras subterráneas desde paneles a tablero , Nro DOC: LDC-PR-22-02-0207-CA-002, FORMATO: CAD 
+DOCUMENTO: 17 --> TITULO: Informe de procedimientos a realizar frente a EPE-CAMMESA, Nro DOC: LDC-PR-22-02-0208-INF-001, FORMATO: WORD 
+DOCUMENTO: 18 --> TITULO: Informe de factibilidad ambiental, Nro DOC: LDC-PR-22-02-0208-INF-002, FORMATO: WORD 
+DOCUMENTO: 19 --> TITULO: Análisis de factibilidad técnica-económica, Nro DOC: LDC-PR-22-02-0208-INF-003, FORMATO: WORD 
+DOCUMENTO: 20 --> TITULO: Pliego de especificaciones técnicas (tener en cuenta la obra civil para hacer el cable subterráneo y las cámaras), Nro DOC: LDC-PR-22-02-0209-PET-001, FORMATO: WORD 
+
+2022-07-21 23:56:01,297 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\00 - Parte diario\
+2022-07-21 23:56:01,299 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\01 - Documentación recibida\00 - Propuesta técnica\
+2022-07-21 23:56:01,300 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\01 - Documentación recibida\01 - Planos\
+2022-07-21 23:56:01,300 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\01 - Documentación recibida\02 - Fotos\
+2022-07-21 23:56:01,301 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\01 - Documentación recibida\03 - Manuales\
+2022-07-21 23:56:01,301 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\00 - Carpeta01\
+2022-07-21 23:56:01,301 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\00 - Carpeta01\
+2022-07-21 23:56:01,304 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,305 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,305 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Memoria de relevamiento de cargas', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'MC'}
+2022-07-21 23:56:01,305 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,305 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Memoria de dimensionamiento de paneles y disposición', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'MC'}
+2022-07-21 23:56:01,305 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,305 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Memoria de dimensionamiento de inversores: distintos casos, incluir baterías', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'MC'}
+2022-07-21 23:56:01,306 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,306 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Memoria de cálculo de conductores', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'MC'}
+2022-07-21 23:56:01,306 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\01 - Carpeta02\
+2022-07-21 23:56:01,306 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Memoria de cálculo de protecciones', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'MC'}
+2022-07-21 23:56:01,306 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\02 - Carpeta03\
+2022-07-21 23:56:01,307 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\02 - Carpeta03\
+2022-07-21 23:56:01,307 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Típico de montaje de paneles', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'TM'}
+2022-07-21 23:56:01,309 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,310 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,310 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Esquema unifilar general', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'EE'}
+2022-07-21 23:56:01,310 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,310 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Topográfico y unifilar de tablero de Administración', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'EE'}
+2022-07-21 23:56:01,310 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,311 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Topográfico y unifilar de tablero de Enfermería', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'EE'}
+2022-07-21 23:56:01,311 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,311 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Topográficos y unifilar de tablero de campo ', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'EE'}
+2022-07-21 23:56:01,311 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\03 - Carpeta04\
+2022-07-21 23:56:01,311 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Topográfico y unifilar de tablero nuevo (si hace falta)', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'EE'}
+2022-07-21 23:56:01,312 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\04 - Carpeta05\
+2022-07-21 23:56:01,312 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\04 - Carpeta05\
+2022-07-21 23:56:01,312 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Listado de conductores', 'tipo': 'Archivo', 'formato': 'EXCEL', 'acronimo': 'LC'}
+2022-07-21 23:56:01,312 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\05 - Carpeta06\
+2022-07-21 23:56:01,312 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\05 - Carpeta06\
+2022-07-21 23:56:01,314 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\06 - Carpeta07\
+2022-07-21 23:56:01,314 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\06 - Carpeta07\
+2022-07-21 23:56:01,315 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Layout de canalizaciones', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'CA'}
+2022-07-21 23:56:01,315 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\06 - Carpeta07\
+2022-07-21 23:56:01,315 - WARNING - armadoCarpetas.creacionSubFicheros - No se pudo copiar el archivo que corresponde a {'nombre': 'Típico de canalizaciones y  cámaras subterráneas desde paneles a tablero ', 'tipo': 'Archivo', 'formato': 'CAD', 'acronimo': 'CA'}
+2022-07-21 23:56:01,315 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\07 - Carpeta08\
+2022-07-21 23:56:01,315 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\07 - Carpeta08\
+2022-07-21 23:56:01,317 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\07 - Carpeta08\
+2022-07-21 23:56:01,318 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\07 - Carpeta08\
+2022-07-21 23:56:01,320 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\08 - Carpeta09\
+2022-07-21 23:56:01,320 - INFO - armadoCarpetas.creacionSubFicheros - Creación de la carpeta C:/Users/fboz/Desktop\04 - asd4\02 - Documentación generada\08 - Carpeta09\

@@ -1,0 +1,60 @@
+{
+
+
+    "carpeta00": {
+        "nombre": "Parte diario",
+        "tipo": "Carpeta",
+        "contenido":{
+            "archivo00" : {
+                "nombre":"Parte diario",
+                "tipo": "Archivo",
+                "formato" : "Excel",
+                "acronimo": "PD"
+            }
+        }
+    },
+
+
+    "carpeta01": {
+        "nombre": "Documentación recibida",
+        "tipo": "Carpeta",
+        "contenido":{
+            "subcarpeta00" : {
+                "nombre":"Propuesta técnica",
+                "tipo": "Carpeta",
+                "contenido" : {
+
+                }
+            },
+
+            "subcarpeta01" : {
+                "nombre":"Planos",
+                "tipo": "Carpeta",
+                "contenido" : {
+
+                }
+            },
+
+            "subcarpeta02" : {
+                "nombre":"Fotos",
+                "tipo": "Carpeta",
+                "contenido" : {
+
+                }
+                
+            },
+
+            "subcarpeta03" : {
+                "nombre":"Manuales",
+                "tipo": "Carpeta",
+                "contenido" : {
+
+                }
+                
+            }
+        }
+
+    }
+
+}
+
