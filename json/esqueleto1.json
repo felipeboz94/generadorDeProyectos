@@ -9,7 +9,8 @@
                 "nombre":"Parte diario",
                 "tipo": "Archivo",
                 "formato" : "Excel",
-                "acronimo": "PD"
+                "acronimo": "PD",
+                "codigoTree": ""
             }
         }
     },

@@ -1,2 +1,1 @@
-from fileinput import filename
-
+N

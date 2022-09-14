@@ -1,5 +1,5 @@
 {
-    "Excel":
+    "EXCEL":
     {
         "tipo00":{
             "nombre" : "Pruebas",
@@ -24,6 +24,22 @@
         "tipo05":{
             "nombre" : "Memoria de cálculo",
             "acronimo" : "MC"
+        },
+        "tipo06":{
+            "nombre" : "Memoria de FAT",
+            "acronimo" : "FAT"
+        },
+        "tipo07":{
+            "nombre" : "Listado de entradas salidas",
+            "acronimo" : "ES"
+        },
+        "tipo08":{
+            "nombre" : "Listado de conductores",
+            "acronimo" : "LCO"
+        },
+        "tipo09":{
+            "nombre" : "Listado de cargas",
+            "acronimo" : "LC"
         }
     },
 
@@ -74,6 +90,13 @@
         "tipo02":{
             "nombre" : "Instructivo",
             "acronimo" : "INS"
+        }
+    },
+
+    "PROJECT":{
+        "tipo00":{
+            "nombre" : "Planning",
+            "acronimo" : "PLA"
         }
     }
 

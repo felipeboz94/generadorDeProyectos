@@ -1,3 +1,4 @@
+from logging import root
 from tkinter import *
 
 def mainGUI():
@@ -62,7 +63,8 @@ def mainGUI():
         directorio = raizTxt.get()
         listadoDocumentos = listadoDocumentosTxt.get()
         trabajo = trabajoCMB.get()
-        cliente = clienteCMB.get()
+        clienteCompleto = clienteCMB.get()
+        cliente = [diccionarioClientes[item]["acronimo"] for item in diccionarioClientes.keys() if diccionarioClientes[item]["nombre"] == clienteCompleto][0] 
         
         vuelta = 0
         auxVuelta = 0
@@ -88,7 +90,12 @@ def mainGUI():
                 
             if not auxVuelta:
                 messagebox.showinfo(title = "Mensaje", message = u"Se va a crear el proyecto: %s en %s"%(nombreProyecto, directorio))
-                creacionCarpetas(nombreProyecto,directorio,listadoDocumentos)
+                import datetime
+                ahora = datetime.datetime.now()
+                fecha = ahora.date()
+                anio = fecha.strftime("%y")
+                prefijo = cliente + '-' + trabajo + '-' + anio + '-' 
+                creacionCarpetas(prefijo, nombreProyecto,directorio,listadoDocumentos)
             auxVuelta = 0
         
 
@@ -110,6 +117,39 @@ def mainGUI():
     ttk.Button(frm, text = 'Buscar', command = seleccionarListado).grid(column = 2, row = 4, columnspan = 2)
     ttk.Button(frm, text = 'Crear', command=crearProyecto).grid(column = 2, row = 5, columnspan = 2)
     
+    menubar = Menu(ventana)
+    ventana.config(menu=menubar)
+    file_menu = Menu(menubar)
+    config_menu = Menu(menubar)
+    help_menu = Menu(menubar)
+    menubar.add_cascade(
+    label="Archivo",
+    menu=file_menu
+)    
+    file_menu.add_command(
+    label='Salir',
+    command=ventana.destroy,
+)
+    menubar.add_cascade(
+    label="Configuración",
+    menu=config_menu
+)    
+    config_menu.add_command(
+    label='Editar archivos',
+    
+)
+    config_menu.add_command(
+    label='Editar clientes',
+    
+)
+    menubar.add_cascade(
+    label="Ayuda",
+    menu=help_menu
+)    
+    help_menu.add_command(
+    label='Instructivo',
+    
+)
     
     
     

@@ -30,61 +30,56 @@
         "habilitado" : 1
     },
     "cliente06" : {
-        "nombre" : "BASF Santo Tomé", 
-        "acronimo" : "BSFSTO",
-        "habilitado" : 1
-    },
-    "cliente07" : {
         "nombre" : "Basf Tortuguitas", 
         "acronimo" : "BSFTOR",
         "habilitado" : 0
     },      
-    "cliente08" : {
+    "cliente07" : {
         "nombre" : "Bunge Ramallo", 
         "acronimo" : "BURA",
         "habilitado" : 1
     }, 
-    "cliente09" : {
+    "cliente08" : {
         "nombre" : "Bunge San Jeronimo", 
         "acronimo" : "BUSJ",
         "habilitado" : 1
     }, 
-    "cliente10" : {
+    "cliente09" : {
         "nombre" : "Bunge Puerto General San Martín", 
         "acronimo" : "BUSM",
         "habilitado" : 1
     }, 
-    "cliente11" : {
+    "cliente10" : {
         "nombre" : "CENTRAL SORRENTO", 
         "acronimo" : "CSO",
         "habilitado" : 1
     }, 
-    "cliente12" : {
+    "cliente11" : {
         "nombre" : "Cerro Vanguardia", 
         "acronimo" : "CVSA",
         "habilitado" : 1
     }, 
-    "cliente13" : {
+    "cliente12" : {
         "nombre" : "LC Tech", 
         "acronimo" : "LCT",
         "habilitado" : 1
     }, 
-    "cliente14" : {
+    "cliente13" : {
         "nombre" : "DREYFUS", 
         "acronimo" : "LDC",
         "habilitado" : 1
     }, 
-    "cliente15" : {
+    "cliente14" : {
         "nombre" : "ProMaíz", 
         "acronimo" : "LDC",
         "habilitado" : 1
     },
-    "cliente16" : {
+    "cliente15" : {
         "nombre" : "RENOVA", 
         "acronimo" : "RNV",
         "habilitado" : 1
     },
-    "cliente17" : {
+    "cliente16" : {
         "nombre" : "Styropek", 
         "acronimo" : "STY",
         "habilitado" : 1

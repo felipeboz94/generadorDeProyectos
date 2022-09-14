@@ -20,7 +20,8 @@
                         "nombre":"Listado de documentos",
                         "tipo": "Archivo",
                         "formato" : "Excel",
-                        "acronimo": "LD"
+                        "acronimo": "LD",
+                        "codigoTree": ""
                     }
 
                 }
@@ -34,7 +35,8 @@
                         "nombre":"Listado de materiales",
                         "tipo": "Archivo",
                         "formato" : "Excel",
-                        "acronimo": "LM"
+                        "acronimo": "LM",
+                        "codigoTree": ""
                     }
 
                 }
@@ -55,7 +57,8 @@
                         "nombre":"Pliego de especificaciones técnicas",
                         "tipo": "Archivo",
                         "formato" : "Word",
-                        "acronimo": "PET"
+                        "acronimo": "PET",
+                        "codigoTree": ""
                     }
                 }
             },
@@ -68,7 +71,8 @@
                         "nombre":"Informe",
                         "tipo": "Archivo",
                         "formato" : "Word",
-                        "acronimo": "INF"
+                        "acronimo": "INF",
+                        "codigoTree": ""
                     }
                 }
             },

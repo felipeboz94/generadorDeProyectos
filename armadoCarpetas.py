@@ -14,6 +14,9 @@ def lecturaJSON(pathJson):
         logger.error("Hubo un error al leer el archivo JSON: %s"%error)
     else:
         return diccionario
+    
+def acronimoCliente(cliente):
+    pass
         
     
 def diccionarioEsqueleto(pathJson = os.path.dirname(os.path.abspath(__file__))+'\\esqueleto.json'):
@@ -48,18 +51,21 @@ def nroProyecto(directorio = None):
 def nombreArchivosCreados():
         pass
 
-def creacionArchivos(dicArchivo):
+def creacionArchivos(dicArchivo, listadoDocumentos):
     from os import scandir 
     import logging 
     logger = logging.getLogger('armadoCarpetas.creacionArchivos')
     archivoFullPath = ''
     if dicArchivo:
         acronimo = dicArchivo["acronimo"]
-        pathArchivosDefault =  os.path.dirname(os.path.abspath(__file__)) +'\\archivosDefault'
-        listadoArchivosDefault = [arch.name for arch in scandir(pathArchivosDefault) if arch.is_file() and not arch.name.startswith(u'~$')]
-        for archivo in listadoArchivosDefault:
-            if acronimo in archivo[:archivo.find('.')]:
-                archivoFullPath = pathArchivosDefault + '\\' + archivo
+        if(acronimo == 'LD' and listadoDocumentos):
+            archivoFullPath = listadoDocumentos
+        else:
+            pathArchivosDefault =  os.path.dirname(os.path.abspath(__file__)) +'\\archivosDefault'
+            listadoArchivosDefault = [arch.name for arch in scandir(pathArchivosDefault) if arch.is_file() and not arch.name.startswith(u'~$')]
+            for archivo in listadoArchivosDefault:
+                if acronimo in archivo[:archivo.find('.')]:
+                    archivoFullPath = pathArchivosDefault + '\\' + archivo
     else:
         logger.error(u'No se encontró un listado de documentos de referencia para copiar')
         archivoFullPath = ''
@@ -67,22 +73,26 @@ def creacionArchivos(dicArchivo):
     
 
 
-def creacionSubFicheros(fichero, nombreCarpeta):
+def creacionSubFicheros(prefijo, fichero, nombreCarpeta, listadoDocumentos):
     import os 
     import logging 
     from shutil import copy2
     logger = logging.getLogger('armadoCarpetas.creacionSubFicheros')
     numeroSubCarpeta = 0
+    numeroArchivo = 1
     for subFichero in fichero["contenido"].values():
         #print(subFichero)
         if subFichero["tipo"] == "Carpeta":
-            nombreSubCarpeta = nombreCarpeta + u'%s - %s\\'%(f"{numeroSubCarpeta:02d}",subFichero["nombre"])
+
+            numeroSubCarpetaTotal = f"{numeroSubCarpeta:02d}"
+            prefijoAuxiliar = prefijo + numeroSubCarpetaTotal
+            nombreSubCarpeta = nombreCarpeta + u'%s%s - %s\\'%(prefijo[-2:],numeroSubCarpetaTotal,subFichero["nombre"])
             try:
                 os.mkdir(nombreSubCarpeta)
                 logger.info('Creación de la carpeta %s'%(nombreSubCarpeta))
                 #Si la subcarpeta tiene contenido, vuelve a llamar a la función para volver a crear o una carpeta dentro o un archivo
                 if subFichero["contenido"]:
-                    creacionSubFicheros(subFichero,nombreSubCarpeta)
+                    creacionSubFicheros(prefijoAuxiliar, subFichero,nombreSubCarpeta, listadoDocumentos)
 
                     
                 numeroSubCarpeta += 1
@@ -90,31 +100,43 @@ def creacionSubFicheros(fichero, nombreCarpeta):
                 logger.error('Error al generar la carpeta %s: %s'%(nombreSubCarpeta, error))
                 
         if subFichero["tipo"] == "Archivo":
-            logger.info('Creación de la carpeta %s'%(nombreCarpeta))
-            archivoFullPath = creacionArchivos(subFichero)
             
+            codigoTree = prefijo + '-' + subFichero["acronimo"]+'-'+ f"{numeroArchivo:03d}"
+            archivoFullPath = creacionArchivos(subFichero, listadoDocumentos)
+            #print("El codigoTree es %s"%codigoTree)
             if archivoFullPath != '':
-                copy2(archivoFullPath,nombreCarpeta)
+                formato = archivoFullPath[archivoFullPath.find('.'):]
+                if subFichero['codigoTree'] != '':
+                    #print("Entra al if del codigoTree y este es %s"%subFichero['codigoTree'])
+                    codigoTree = subFichero['codigoTree']
+                    
+                nombreArchivo = nombreCarpeta + '/' + codigoTree + ' - ' + subFichero['nombre'] + formato
+                
+                copy2(archivoFullPath,nombreArchivo)
+                logger.info("Archivo %s copiado"%nombreArchivo)
+                numeroArchivo += 1
+
             else:
                 logger.warning('No se pudo copiar el archivo que corresponde a %s'%subFichero)
 
 
 
                
-def creaProyectoDefault(dicEsqueleto, carpetaProyecto):
+def creaProyecto(prefijo, dicEsqueleto, carpetaProyecto, listadoDocumentos):
     from tkinter import messagebox
     import logging
-    logger = logging.Logger('armadoCarpetas.creaProyectoDefault')
+    logger = logging.Logger('armadoCarpetas.creaProyecto')
     try:
         if dicEsqueleto:
             os.mkdir(carpetaProyecto)
             numeroCarpeta = 0
             for fichero in dicEsqueleto.values():
                 if fichero["tipo"] == "Carpeta":
+                    prefijoAuxiliar = prefijo + f"{numeroCarpeta:02d}"
                     nombreCarpeta = carpetaProyecto + u'%s - %s\\'%(f"{numeroCarpeta:02d}",fichero["nombre"])
                     os.mkdir(nombreCarpeta)
                     
-                    creacionSubFicheros(fichero, nombreCarpeta)
+                    creacionSubFicheros(prefijoAuxiliar, fichero, nombreCarpeta, listadoDocumentos)
                     numeroCarpeta += 1
             
             messagebox.showinfo(title="Mensaje", message="Creación exitosa")
@@ -125,7 +147,7 @@ def creaProyectoDefault(dicEsqueleto, carpetaProyecto):
 
 
   
-def creacionCarpetas(nombreProyecto = None, directorio = None, listadoDocumentos = None):
+def creacionCarpetas(prefijo, nombreProyecto = None, directorio = None, listadoDocumentos = None):
     import os 
     from tkinter import messagebox    
     import logging
@@ -135,12 +157,10 @@ def creacionCarpetas(nombreProyecto = None, directorio = None, listadoDocumentos
 
     logger.info(u'Está por crear un proyecto')
     numeroProyecto = nroProyecto(directorio)
+    prefijo += numeroProyecto + '-'
     carpetaProyecto = directorio +'\\%s - %s\\'%(numeroProyecto,nombreProyecto) 
     
     ##--------------------------------------------
-    # ACÁ AGREGAR LÓGICA DE LECTURA DE LISTADO DE DOCUMENTOS. SI TRAE EL DICCIONARIO
-    #QUE ELIGA EL PATH DEFAULT, SINO SE SELECCIONA LA OPCIÓN O SI EL LISTADO DE DOCS NO EXISTE O SE GENERA UN ERROR
-    #AVISAR Y PROPONER GENERAR DEFAULT
     dicListadoDocumentos = lecturaExcel(listadoDocumentos) if listadoDocumentos else None
     pathJson = 'json\\esqueleto1.json'
     dicEsqueleto = diccionarioEsqueleto(pathJson)    
@@ -151,13 +171,7 @@ def creacionCarpetas(nombreProyecto = None, directorio = None, listadoDocumentos
     else:
         dicEsqueleto["carpeta02"] = dicListadoDocumentos["carpeta02"]
         
-    print("El diccionario esqueleto es \n \n \n %s"%dicEsqueleto)
-    creaProyectoDefault(dicEsqueleto, carpetaProyecto)
-        #creaProyectoDefault(dicListadoDocumentos, carpetaProyecto)
-    
-    #------------------------------------------    
-
-    #creaProyectoDefault(dicListadoDocumentos, carpetaProyecto)
+    creaProyecto(prefijo, dicEsqueleto, carpetaProyecto,listadoDocumentos)
            
 
 

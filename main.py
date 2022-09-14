@@ -1,6 +1,6 @@
 
 def main():
-    from grafica import mainGUI
+    from grafica_ import constructorVentana
     import logging
     from iniciaLog import iniciaLog 
     
@@ -8,9 +8,10 @@ def main():
     logger = logging.getLogger('main.main')
     logger.info(u'¡INICIO DE LA APLICACIÓN!')
 
-    mainGUI()
+    constructorVentana()
 main()
 
-#falta corregir nombres de carpetas de documentación generada
-#ver lógica para armar nombres de archivos
 #agregar documentos estándar
+#agregar un menú para ver json de clientes, json de archivos y poder editarlos
+#agregar menú de ayuda
+#ahí ya sale la versión 1.0.0

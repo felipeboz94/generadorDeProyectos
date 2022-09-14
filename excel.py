@@ -4,11 +4,31 @@ from distutils.log import error
 from plistlib import InvalidFileException
 from typing import Dict
 
+def nombreSubCarpetasListadoDeDocumentos(diccionarioArchivos,formato, acronimo,nro):
+
+    import logging
+    logger = logging.getLogger('excel.nombreSubCarpetasListadoDeDocumentos')  
+    try:
+        nombre = [diccionarioArchivos[formato.upper()][item]["nombre"] for item in diccionarioArchivos[formato.upper()].keys() if diccionarioArchivos[formato.upper()][item]["acronimo"].upper() == acronimo.upper()][0] 
+    except:
+        logger.error("Hubo un error al formar el nombre de la subcarpeta desde el Listado de documentos")
+        nombre = "Carpeta"+nro
+    return nombre
+
+
 def dicEsqueletoDeListadoDeDocumentos(dicDocumentos = None):
     import re
+    import json
     from tkinter import messagebox
     import logging
     logger = logging.getLogger('excel.dicEsqueletoDeListadoDeDocumentos')
+    
+    try:
+        with open('json\\tipoArchivo.json',"r", encoding="utf-8") as j:
+            diccionarioArchivos = json.load(j)
+    except FileNotFoundError  as error:
+        logger.error("Hubo un error al leer el archivo JSON: %s"%error)
+        
     diccionario = dict()
     nroSubCarpeta = []
     if dicDocumentos != None:
@@ -17,7 +37,13 @@ def dicEsqueletoDeListadoDeDocumentos(dicDocumentos = None):
                 "nombre": "Documentación generada",
                 "tipo" : "Carpeta",
                 "contenido": {
-                    
+                    "subcarpeta00" : {
+                        "nombre":"Documentación lista para enviar",
+                        "tipo": "Carpeta",
+                        "contenido" : {
+
+                        }
+                    }                    
                 }
             }
             
@@ -25,28 +51,30 @@ def dicEsqueletoDeListadoDeDocumentos(dicDocumentos = None):
             for key in dicDocumentos.keys():
                 archivo = dicDocumentos[key]
                 titulo = archivo["titulo"]
-                numero = archivo["numero"]
                 formato = archivo["formato"] if archivo["formato"] else ""
+                codigoTree = archivo["codigoTree"] if archivo["codigoTree"] else ""
                 #armado de cantidad de subcarpetas
-                if numero:
+                if codigoTree:
                     #split para dividir por guión
-                    x = re.split("-",numero)
+                    x = re.split("-",codigoTree)
                     #en la posición 4, tomando los dos últimos dígitos es el número de la subcarpeta donde está el archivo 
                     nro = x[4][2:]
                     acronimo = x[5]
+                    nombreSubCarpeta = nombreSubCarpetasListadoDeDocumentos(diccionarioArchivos,formato, acronimo, nro)
                     if nro not in nroSubCarpeta:
                         nroArchivo = 0 
                         nroSubCarpeta.append(nro)
+            
                         #arma esqueleto de subcarpeta
-                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro] = {"nombre" : "Carpeta"+nro, "tipo":"Carpeta","contenido":{}}
+                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro] = {"nombre" : nombreSubCarpeta, "tipo":"Carpeta","contenido":{}}
                         #arma esqueleto de primer archivo 
-                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro]["contenido"]["archivo"+f"{nroArchivo:02d}"] = {"nombre": titulo, "tipo": "Archivo", "formato" : formato, "acronimo": acronimo}
+                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro]["contenido"]["archivo"+f"{nroArchivo:02d}"] = {"nombre": titulo, "tipo": "Archivo", "formato" : formato, "acronimo": acronimo, "codigoTree":codigoTree}
                     else:
                         #arma esqueleto de segundo o más archivo
-                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro]["contenido"]["archivo"+f"{nroArchivo:02d}"] = {"nombre": titulo, "tipo": "Archivo", "formato" : formato, "acronimo": acronimo}
+                        diccionario["carpeta02"]["contenido"]["subcarpeta"+nro]["contenido"]["archivo"+f"{nroArchivo:02d}"] = {"nombre": titulo, "tipo": "Archivo", "formato" : formato, "acronimo": acronimo, "codigoTree":codigoTree}
                     nroArchivo += 1
                 #armado de archivos dentro de subcarpeta x
-            #print(diccionario)
+            print(diccionario)
         except re.error : 
             messagebox.showerror(title = "Error", message="No se pudo obtener la estructura del Listado de Documentos. No se corresponde con el formato. El error: %s"%(re.error))
             logger.error("No se pudo obtener la estructura del Listado de Documentos. Error en split. No se corresponde con el formato. El error: %s"%(re.error))
@@ -113,7 +141,7 @@ def lecturaExcel(fileName = None ):
                         celdaFormato = hojaLD["%s%s"%(colFormato,nroFila)].value
                     else:
                         celdaFormato = None  
-                    dicDocumentos.update({docF : {"titulo" : celdaTitulo, "numero" : celdaNroDoc, "formato" : celdaFormato}}) #"documento%s"%(f"{docF:02d}")
+                    dicDocumentos.update({docF : {"titulo" : celdaTitulo, "codigoTree" : celdaNroDoc, "formato" : celdaFormato}}) #"documento%s"%(f"{docF:02d}")
 
                     
                     mensaje += "DOCUMENTO: %s --> TITULO: %s, Nro DOC: %s, FORMATO: %s \n"%(docF,celdaTitulo,celdaNroDoc,celdaFormato)
@@ -129,6 +157,7 @@ def lecturaExcel(fileName = None ):
         logger.error("Error abriendo el listado de documentos")
     
     if dicDocumentos:
+        print(dicDocumentos)
         diccionarioListadoDocumentos = dicEsqueletoDeListadoDeDocumentos(dicDocumentos)
     
     return diccionarioListadoDocumentos

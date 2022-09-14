@@ -1,0 +1,25 @@
+from cgitb import text
+from logging import root
+from tkinter import *
+from setuptools import Command 
+
+
+import os 
+import json
+import logging
+import tkinter as tk    
+from tkinter import ttk
+logger = logging.getLogger('grafica.editaArchivosGUI')
+try:
+    with open('json\\clientes.json',"r", encoding="utf-8") as j:
+        diccionarioArchivos = json.load(j) 
+except FileNotFoundError  as error:
+    logger.error("Hubo un error al leer el archivo JSON: %s"%error)  
+
+
+data = []
+data.append(['Acrónimo', 'Cliente', 'Habilitado'])
+for key1 in diccionarioArchivos.keys():
+    id = diccionarioArchivos[key1]
+    data.append([id['acronimo'],id['nombre'],id['habilitado']])
+print(data)
