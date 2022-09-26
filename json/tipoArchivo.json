@@ -90,6 +90,10 @@
         "tipo02":{
             "nombre" : "Instructivo",
             "acronimo" : "INS"
+        },
+        "tipo03":{
+            "nombre" : "Filosofía de control",
+            "acronimo" : "FC"
         }
     },
 

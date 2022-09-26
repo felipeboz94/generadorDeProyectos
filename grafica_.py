@@ -1,10 +1,11 @@
 from cgitb import text
 from logging import root
 from tkinter import *
-from mysqlx import Row
+from turtle import bgcolor
 from setuptools import Command 
 import tkinter as tk    
 from tkinter import ttk
+from tkinter import messagebox
 
 def tabla(frm,data):
     filas = len(data)
@@ -71,6 +72,12 @@ def editaArchivosGUI(frmEA):
     cmbFormato = ttk.Combobox(frmBotonera, values=["EXCEL", "WORD", "CAD","PROJECT","POWERPOINT","VISIO"],textvariable=formato, state=DISABLED)
     cmbFormato.grid(column = 5, row = 3, columnspan = 2)
     
+    def cancelar():
+        vaciarCajas()
+        txtAcronimo['state']=DISABLED
+        txtNombre['state']=DISABLED
+        cmbFormato['state']=DISABLED       
+    
     def habilitar():
         txtAcronimo['state']=NORMAL
         txtNombre['state']=NORMAL
@@ -103,7 +110,9 @@ def editaArchivosGUI(frmEA):
     borrarBtn = ttk.Button(frmBotonera, text = 'Borrar')
     borrarBtn.grid(column = 5, row = 6, columnspan = 2)
     guardarBtn = ttk.Button(frmBotonera, text = 'Guardar')
-    guardarBtn.grid(column = 5, row = 7, columnspan = 2)    
+    guardarBtn.grid(column = 5, row = 7, columnspan = 2)
+    cancelarBtn = ttk.Button(frmBotonera, text = 'Cancelar', command = cancelar)
+    cancelarBtn.grid(column = 5, row = 8, columnspan = 2)      
     
     
 def editaClientesGUI(frmEC):
@@ -136,6 +145,9 @@ def editaClientesGUI(frmEC):
     acronimo = tk.StringVar()
     nombre = tk.StringVar()
     habilitado = tk.IntVar()
+    modo = tk.StringVar()
+    cmdAgregar = tk.IntVar()
+    cmdEditar = tk.IntVar()
     #Defino entradas de texto con la asignación de las variables anteriores
     txtAcronimo = ttk.Entry(frmBotonera, textvariable = acronimo, state=DISABLED)
     txtAcronimo.grid(column = 5, row = 0, columnspan = 2) 
@@ -143,14 +155,60 @@ def editaClientesGUI(frmEC):
     txtNombre.grid(column = 5, row = 1, columnspan = 2)
     chkHabilitado = ttk.Checkbutton(frmBotonera, text='Habilitado',variable=habilitado, onvalue = 1, offvalue = 0, state=DISABLED)
     chkHabilitado.grid(column = 5, row = 2, columnspan = 2)
-    
     chkHabilitado.setvar(value=1)
-    
+    cmdAgregar.set(1)
+    cmdEditar.set(0)
+    modo.set("")
+    def cancelar():
+        vaciarCajas()
+        txtAcronimo['state']=DISABLED
+        txtNombre['state']=DISABLED
+        chkHabilitado['state']=DISABLED
+        modo.set("")  
+        
     def habilitar():
         txtAcronimo['state']=NORMAL
         txtNombre['state']=NORMAL
         chkHabilitado['state']=NORMAL
         
+    def borrar():
+        pass
+    
+    def agregar():
+        cmdAgregar.set(1)
+        cmdEditar.set(0)
+        modo.set("Modo : Agregar")
+        habilitar()
+        
+    def editar():
+        cmdAgregar.set(0)
+        cmdEditar.set(1)
+        modo.set("Modo : Editar")
+        habilitar()
+    
+    def guardar():
+        print("cmdAgregar ",cmdAgregar.get() )
+        print("cmdEditar ",cmdEditar.get() )
+        if(cmdAgregar.get() and not cmdEditar.get()):
+            if(acronimo.get() != None and nombre.get() != None):
+                print("acronimo ", acronimo.get())
+                print("data ", data)
+                for lista in data:
+                    if acronimo.get() in lista:
+                        print('acronimo está dentro de data')
+                        txtAcronimo.configure({"background": 'red'})
+                        break
+                    else:
+                        print("acronimo no está dentro de data")
+            else:
+                logger.warning('Está queriendo guardar un cliente con un acrónimo o nombre nulo')
+                messagebox.showwarning(title = 'Atención', message = 'Está queriendo guardar un cliente con un acrónimo o nombre nulo')
+                #validaciones...
+        elif(not cmdAgregar.get() and not cmdEditar.get()):
+            print(acronimo.get(),nombre.get(),habilitado.get())
+            #validaciones...
+            texto = "guardarSobreJson()"
+        messagebox.showinfo(title = "Aviso", message = "No hace nada por ahora")
     def vaciarCajas():
         txtAcronimo.delete(0,END)
         txtNombre.delete(0,END)
@@ -159,6 +217,9 @@ def editaClientesGUI(frmEC):
     def select_record():
         selected = tabClientes.focus()
         dataSel = tabClientes.item(selected,'values')
+        
+        print(selected)
+        print(dataSel)
         vaciarCajas()
         txtAcronimo.insert(0,dataSel[0])
         txtNombre.insert(0,dataSel[1])
@@ -171,16 +232,18 @@ def editaClientesGUI(frmEC):
      #------------------------------------------------------------------------
     #INSTANCIACIÓN DE OBJETOS               
 
-    agregarBtn = ttk.Button(frmBotonera, text = 'Agregar')
+    agregarBtn = ttk.Button(frmBotonera, text = 'Agregar',command=agregar)
     agregarBtn.grid(column = 5, row = 4, columnspan = 2)
-    editarBtn = ttk.Button(frmBotonera, text = 'Editar',command=habilitar)
+    editarBtn = ttk.Button(frmBotonera, text = 'Editar',command=editar)
     editarBtn.grid(column = 5, row = 5, columnspan = 2)
-    borrarBtn = ttk.Button(frmBotonera, text = 'Borrar')
+    borrarBtn = ttk.Button(frmBotonera, text = 'Borrar', command = borrar)
     borrarBtn.grid(column = 5, row = 6, columnspan = 2)
-    guardarBtn = ttk.Button(frmBotonera, text = 'Guardar')
+    guardarBtn = ttk.Button(frmBotonera, text = 'Guardar', command = guardar)
     guardarBtn.grid(column = 5, row = 7, columnspan = 2)    
-    
-
+    cancelarBtn = ttk.Button(frmBotonera, text = 'Cancelar', command = cancelar)
+    cancelarBtn.grid(column = 5, row = 8, columnspan = 2)
+    modoLabel = ttk.Label(frmBotonera, textvariable = modo)      
+    modoLabel.grid(column = 5, row = 9, columnspan = 2)
     
 def instructivoAyudaGUI(frmHelp):
     import logging
@@ -233,7 +296,7 @@ def creaproyectosGUI(frmCP):
     #------------------------------------------------------------------------ 
     
     def crearProyecto():
-        from tkinter import messagebox
+        
         from armadoCarpetas import creacionCarpetas
         import os 
         
